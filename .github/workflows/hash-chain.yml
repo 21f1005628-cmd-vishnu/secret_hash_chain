@@ -14,9 +14,9 @@ jobs:
 
       - name: Compute hash chain
         env:
-          MY_SECRET: ${{ secrets.MY_SECRET_VISHNU }}
+          MY_SECRET: ${{ secrets.MY_SECRET}}
         run: |
-          VERIFY_HASH=$(echo -n "${MY_SECRET_VISHNU}github-verified" | sha256sum | cut -c1-10)
+          VERIFY_HASH=$(echo -n "${MY_SECRET}github-verified" | sha256sum | cut -c1-10)
           echo "Verify hash: ${VERIFY_HASH}"
           echo "${VERIFY_HASH}" > verify_hash.txt
 
